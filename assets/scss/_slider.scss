@@ -1,0 +1,248 @@
+@import 'swiper/css/swiper';
+
+:root {
+  --swiper-theme-color: #{$green};
+}
+
+.slider-section {
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 0 !important;
+  }
+}
+
+.slider-container {
+  margin-top: 30px;
+
+  @include media-breakpoint-down(md) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.category-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  min-height: 70px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-family: 'Open Sans Bold', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: $brs;
+  outline: none !important;
+  transition: 150ms;
+
+  @include media-breakpoint-down(lg) {
+    min-width: 180px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    flex: auto;
+    min-width: 145px;
+    min-height: 50px;
+    padding: 0 20px;
+  }
+
+  &:hover {
+    background: $green;
+  }
+
+  &_active {
+    background: $green;
+  }
+}
+
+.gallery-top,
+.gallery-thumbs {
+  @include media-breakpoint-up(xl) {
+    width: 930px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  img {
+    position: relative;
+    z-index: 100;
+    height: 100%;
+  }
+}
+
+.gallery-top {
+  .swiper-slide {
+    width: 100% !important;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    cursor: zoom-in;
+    outline: none;
+  }
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+}
+
+.photo::before {
+  display: block;
+  padding-top: 75%;
+  content: '';
+}
+
+.gallery-thumbs {
+  .swiper-slide {
+    width: initial !important;
+    min-width: 45px;
+    height: 60px;
+    margin: 8px 4px 30px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: $brs;
+    outline: none;
+    opacity: 0.5;
+    transition: 250ms;
+
+    &.swiper-slide-thumb-active {
+      border: 2px solid $green;
+      opacity: 1;
+    }
+  }
+
+  &-active {
+    .swiper-slide {
+      pointer-events: auto !important;
+      visibility: visible !important;
+    }
+  }
+}
+
+.caption {
+  position: initial;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 126px;
+  padding: 30px 0 20px;
+  font-family: 'Open Sans Light', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: $brs;
+
+  @include media-breakpoint-up(xl) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 181px;
+    height: 698px;
+    padding: 10px 0 0 10px;
+    margin: auto;
+    border-radius: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    border-bottom: 1px solid white;
+    border-radius: 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 14px;
+  }
+
+  &__footage,
+  &__time {
+    padding-top: 10px;
+
+    &::before {
+      display: block;
+      font-family: 'Open Sans Extrabold', sans-serif;
+      font-size: 12px;
+      color: $green;
+      @include media-breakpoint-down(xs) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__address {
+    font-size: 16px;
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 40px;
+      text-align: right;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-right: 15px;
+      font-size: 14px;
+    }
+  }
+
+  &__footage {
+    @include media-breakpoint-down(lg) {
+      padding: 0 40px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: 0 15px;
+    }
+
+    &::before {
+      content: 'Метраж:';
+    }
+  }
+
+  &__time {
+    max-width: 30%;
+
+    @include media-breakpoint-up(xl) {
+      max-width: initial;
+    }
+
+    @include media-breakpoint-down(lg) {
+      padding-left: 40px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding-left: 15px;
+    }
+
+    &::before {
+      width: 125px;
+      content: 'Изготовление и монтаж:';
+    }
+  }
+}
+
+.gallery-all .swiper-pagination {
+  bottom: 138px !important;
+
+  @include media-breakpoint-up(xl) {
+    bottom: 12px !important;
+  }
+}

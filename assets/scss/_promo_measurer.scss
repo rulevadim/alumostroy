@@ -1,0 +1,137 @@
+.promo {
+  position: relative;
+  height: 860px;
+  margin-bottom: -300px;
+
+  @include media-breakpoint-down(md) {
+    background-position-x: -220px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 500px;
+    margin-bottom: 0;
+    background-position-x: left;
+  }
+
+  @include media-breakpoint-down(xs) {
+    height: 300px;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__text {
+    width: 800px;
+    height: 200px;
+    padding-left: 20px;
+    margin: 0;
+    margin-top: 70px;
+    font-family: 'Open Sans Extrabold', sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 64px;
+    color: white;
+    background: url(~assets/svg/bg-text-big.svg?inline) (left / contain) no-repeat;
+
+    @include media-breakpoint-down(md) {
+      width: 600px;
+      height: 150px;
+      padding-left: 15px;
+      font-size: 36px;
+      line-height: 48px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 500px;
+      height: 125px;
+      padding-left: 13px;
+      margin-top: 40px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 260px;
+      height: 159px;
+      padding-right: 20px;
+      padding-left: 8px;
+      font-size: 24px;
+      line-height: 32px;
+      background-image: url(~assets/svg/bg-text-small.svg?inline);
+    }
+  }
+}
+
+.measurer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  &__title {
+    padding-top: 0 !important;
+    margin-top: -20px;
+  }
+
+  &__description {
+    width: 700px;
+
+    @include media-breakpoint-down(sm) {
+      width: 422px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 280px;
+    }
+  }
+
+  &__form-visible {
+    justify-content: center;
+
+    & > div {
+      display: flex;
+      justify-content: center;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem(30px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__select {
+    padding-right: 50px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: inherit;
+    color: black;
+    appearance: none;
+    background: url(~assets/svg/sort-down.svg?inline) (right / auto) 50% no-repeat, white;
+  }
+
+  &__phone {
+    @include media-breakpoint-up(md) {
+      width: 210px;
+    }
+  }
+}

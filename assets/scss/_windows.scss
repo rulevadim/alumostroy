@@ -1,0 +1,243 @@
+.windows {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-position: left;
+    object-fit: cover;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__title {
+    padding-bottom: 1em;
+  }
+
+  &__title-2 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+.features {
+  display: flex;
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    width: 250px;
+  }
+}
+
+.feature {
+  position: relative;
+  display: flex;
+  flex: 2 0 auto;
+  justify-content: center;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, 0.3);
+
+    @include media-breakpoint-up(lg) {
+      top: 40px;
+      right: 0;
+      bottom: 40px;
+      display: block;
+      width: 1px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 1px;
+    }
+  }
+
+  &:first-child {
+    flex: 1 0 auto;
+    justify-content: flex-start;
+  }
+
+  &:last-child {
+    flex: 1 0 auto;
+    justify-content: flex-end;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-bottom: 20px;
+
+    &:nth-child(even) {
+      justify-content: flex-end;
+
+      .feature__number {
+        order: 1;
+      }
+
+      .feature__text {
+        margin-right: 10px;
+      }
+    }
+
+    &:nth-child(odd) {
+      justify-content: flex-start;
+
+      .feature__text {
+        margin-left: 10px;
+      }
+    }
+
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__number {
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+
+    @include media-breakpoint-down(md) {
+      background-size: 90%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size: 80%;
+    }
+
+    &_img-1 {
+      width: 58px;
+      height: 98px;
+      background-image: url(~assets/img/1.png?inline);
+    }
+
+    &_img-2 {
+      width: 72px;
+      height: 99px;
+      background-image: url(~assets/img/2.png?inline);
+    }
+
+    &_img-3 {
+      width: 70px;
+      height: 100px;
+      background-image: url(~assets/img/3.png?inline);
+    }
+
+    &_img-4 {
+      width: 76px;
+      height: 98px;
+      background-image: url(~assets/img/4.png?inline);
+    }
+
+    &_img-5 {
+      width: 68px;
+      height: 99px;
+      background-image: url(~assets/img/5.png?inline);
+    }
+  }
+
+  &__text {
+    margin-top: 0.8em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: italic 18px;
+    color: black;
+    @include media-breakpoint-down(md) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+  }
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-position: center top;
+    object-fit: contain;
+
+    &_2 {
+      @include media-breakpoint-down(xs) {
+        margin-top: 40px;
+      }
+    }
+
+    &_3,
+    &_4 {
+      @include media-breakpoint-down(md) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: 24px;
+    color: black;
+  }
+}
+
+.pilkington {
+  display: flex;
+  justify-content: center;
+  margin-top: 72px;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+    margin-top: 60px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-top: 48px;
+  }
+
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+    width: 265px;
+    margin-right: 30px;
+    object-fit: contain;
+
+    @include media-breakpoint-down(md) {
+      height: 50px;
+      margin: auto;
+    }
+  }
+
+  &__description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    text-align: left;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 14px;
+    }
+  }
+}

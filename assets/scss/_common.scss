@@ -1,0 +1,233 @@
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: black;
+  @include media-breakpoint-down(md) {
+    font-size: 14px;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+section {
+  width: 100%;
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.container {
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+  }
+}
+
+.section-padding-bottom {
+  padding-bottom: 72px;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 60px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-bottom: 48px;
+  }
+}
+
+.section-padding-y {
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.title {
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+  margin: 0 auto;
+  font-family: 'Open Sans Bold', sans-serif;
+  font-size: 36px;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 30px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 24px;
+  }
+
+  &_pages {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    text-align: left;
+
+    @include media-breakpoint-down(md) {
+      padding-top: 2em;
+      text-align: center;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 23px); // for fckn Safari
+      display: block;
+      align-self: center;
+      width: 46px;
+      height: 3px;
+      content: '';
+      background-color: $green;
+    }
+  }
+
+  &_pt-0 {
+    padding-top: 0;
+  }
+
+  &_left {
+    text-align: left;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+
+  &_center {
+    text-align: center;
+  }
+}
+
+.subtitle {
+  margin: 2em auto 1em;
+  font-family: 'Open Sans Bold', sans-serif;
+  font-size: 30px;
+
+  @include media-breakpoint-down(md) {
+    font-size: 24px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 20px;
+  }
+
+  &_mt-0 {
+    margin-top: 0;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}
+
+.description {
+  padding-bottom: 1.5rem;
+  margin: 0 auto 0;
+  margin-top: -0.5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  color: $light;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: 16px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    font-size: 14px;
+  }
+
+  &_left {
+    text-align: left;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+}
+
+.font {
+  &_white {
+    color: white;
+  }
+
+  &_black {
+    color: black;
+  }
+
+  &_regular {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.form {
+  &-element {
+    display: block;
+    width: 100%;
+    padding: rem(20px);
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: inherit;
+    color: black;
+    text-decoration: none;
+    resize: vertical;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: $brs;
+    outline: none;
+
+    &.error {
+      border-color: red;
+    }
+  }
+
+  &-phone {
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: inherit;
+    color: black;
+    transition: 250ms;
+  }
+
+  &-submit {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: rem(14px);
+    line-height: rem(22px);
+    color: white;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    cursor: pointer;
+    background: $green;
+    transition: 250ms;
+
+    &:hover {
+      background: lighten($green, 10%);
+    }
+  }
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.img {
+  width: 100%;
+}

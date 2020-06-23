@@ -1,0 +1,110 @@
+.catalog {
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 0 !important;
+  }
+
+  @media (min-width: 1900px) {
+    padding-bottom: 230px;
+  }
+
+  &__bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+    height: 700px;
+
+    @media (min-width: 1900px) {
+      display: block;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__row {
+    margin-top: -15px;
+    margin-bottom: -15px;
+
+    @include media-breakpoint-down(sm) {
+      margin: (-3px) -18px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item {
+  min-height: 380px;
+  padding: 15px;
+
+  @include media-breakpoint-down(lg) {
+    min-height: 320px;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-height: 360px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 3px;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 250ms;
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 60px;
+      content: '';
+      background: rgba(0, 0, 0, 0.8);
+      transition: 250ms;
+    }
+
+    &:hover {
+      box-shadow: 0 3px 7px black;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &_lamp {
+      object-position: left;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    z-index: 3;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+  }
+}

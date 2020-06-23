@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /index.html
+Disallow: /index
+Disallow: /#block_7
+Disallow: /#block_9
+Disallow: /#block_2
+Disallow: /#block_3
+Disallow: /#block_5
+Disallow: /uploads/files/alumark-f50.pdf
+Disallow: /uploads/files/alumark-s70.pdf
+Disallow: /uploads/files/alumark-S70-1.pdf
+Disallow: /uploads/files/alumark-s50.pdf
+Disallow: /uploads/files/Alumark-S44-2.pdf
+Disallow: /uploads/files/Alumark-S44.pdf

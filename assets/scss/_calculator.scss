@@ -1,0 +1,205 @@
+.calculator {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.8);
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+    object-position: bottom right;
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__block-1 {
+    margin-right: -15px;
+    background: $green;
+    border-radius: $brs 0 0 $brs;
+
+    @include media-breakpoint-down(md) {
+      border-radius: $brs 0 0 0;
+
+      &::after {
+        position: absolute;
+        right: 45px;
+        bottom: 0;
+        left: 45px;
+        height: 1px;
+        content: '';
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-right: 0;
+      border-radius: $brs $brs 0 0;
+    }
+  }
+
+  &__block-2 {
+    margin-right: -15px;
+    margin-left: -15px;
+    background: $green;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 30px;
+      bottom: 30px;
+      display: block;
+      width: 1px;
+      content: '';
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    &::before {
+      left: 0;
+
+      @include media-breakpoint-down(xs) {
+        top: initial;
+        right: 45px;
+        bottom: 0;
+        left: 45px;
+        width: initial;
+        height: 1px;
+      }
+    }
+
+    &::after {
+      right: 0;
+
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-right: 0;
+      border-radius: 0 $brs $brs 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-left: 0;
+      border-radius: 0;
+    }
+  }
+
+  &__block-3 {
+    margin-left: -15px;
+    background: $green;
+    border-radius: 0 $brs $brs 0;
+
+    @include media-breakpoint-down(md) {
+      margin-right: -15px;
+      margin-left: 0;
+      border-radius: 0 0 $brs $brs;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-right: 0;
+    }
+  }
+
+  &__block-result {
+    margin-left: -20px;
+    background: $green;
+    border-radius: $brs;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 0;
+    }
+  }
+
+  &__result-container {
+    @include media-breakpoint-down(md) {
+      padding-top: 15px;
+    }
+  }
+
+  &__comment {
+    height: 100%;
+    cursor: initial;
+  }
+
+  &__phone {
+    @include media-breakpoint-down(md) {
+      margin-top: rem(30px);
+    }
+  }
+
+  &__submit {
+    margin-top: rem(30px);
+  }
+}
+
+.calc-block {
+  position: relative;
+  height: 100%;
+  padding: rem(30px) rem(45px);
+  color: white;
+
+  &__title,
+  &__icon {
+    margin-bottom: rem(20px);
+  }
+
+  &__icon {
+    align-self: flex-start;
+    height: 22px;
+  }
+
+  &__title {
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: rem(30px);
+    line-height: rem(22px);
+    color: inherit;
+  }
+
+  &__description {
+    margin-bottom: rem(18px);
+    color: inherit;
+  }
+
+  &__select,
+  &__input {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: inherit;
+    color: black;
+    border: 1px solid transparent;
+    border-radius: $brs;
+    outline: none;
+    appearance: none;
+  }
+
+  &__select {
+    padding-right: 50px;
+    cursor: pointer;
+    background: url(~assets/svg/sort-down.svg?inline) (right / auto) 50% no-repeat, white;
+  }
+
+  &__price {
+    font-family: 'Open Sans Extrabold', sans-serif;
+    font-size: rem(24px);
+    color: white;
+  }
+}

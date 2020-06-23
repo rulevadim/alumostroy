@@ -1,0 +1,16 @@
+.pop-up {
+  display: none;
+  width: 320px;
+  padding: 30px;
+  border-radius: $brs;
+  .form-element {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.pop-up__title {
+  padding-top: 0.5em;
+}

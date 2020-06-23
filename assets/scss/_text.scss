@@ -1,0 +1,24 @@
+.text {
+  font-family: 'Open Sans Light', sans-serif;
+  line-height: 1.75;
+}
+
+.text_bold {
+  font-family: 'Open Sans Bold', sans-serif;
+}
+
+ul.text {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 1rem;
+    &::before {
+      position: absolute;
+      left: 0;
+      content: '–';
+    }
+  }
+}
